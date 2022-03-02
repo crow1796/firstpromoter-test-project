@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     sorted() {
-      if(this.sortDir) return orderBy(this.data, 'Name', this.sortDir)
+      if(this.sortDir) return orderBy(this.data, this.sortBy, this.sortDir)
 
       return this.data;
     },
@@ -40,7 +40,7 @@ export default {
         <th
           scope="col"
           class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400 cursor-pointer"
-          @click="sort('name')"
+          @click="sort('Name')"
         >
           <span class="flex items-center justify-between">
             <span>Name</span>
